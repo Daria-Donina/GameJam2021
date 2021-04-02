@@ -24,13 +24,13 @@ public class Shooter : MonoBehaviour
 		// анимация
 
 		//Get the Screen positions of the object
-		Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+		Vector2 positionOnScreen = transform.position;
 
 		//Get the Screen position of the mouse
-		Vector2 mouseOnScreen = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+		Vector2 mouseOnScreen = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-		var ray = new Ray(positionOnScreen, mouseOnScreen);
-		Gizmos.DrawRay(ray);
+		var ray = new Ray(positionOnScreen, mouseOnScreen - positionOnScreen);
+		Debug.DrawRay(positionOnScreen, mouseOnScreen - positionOnScreen, Color.blue, 1);
 
 		ShotFired?.Invoke(this, ray);
 	}

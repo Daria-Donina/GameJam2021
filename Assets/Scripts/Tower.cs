@@ -14,6 +14,11 @@ public class Tower : MonoBehaviour
 	private bool inTrigger;
 	private PlayerController playerController;
 
+	private Shooter shooter;
+
+	[Range(0, 100)]
+	public int radius;
+
 	[SerializeField]
 	private Texture2D cursorArrow;
 
@@ -21,6 +26,7 @@ public class Tower : MonoBehaviour
 	{
 		rotator = new RotatorToCursor(gameObject);
 		playerController = player.GetComponent<PlayerController>();
+		shooter = GetComponent<Shooter>();
 	}
 
 	void Update()
@@ -32,8 +38,8 @@ public class Tower : MonoBehaviour
 				isTowerTaken = false;
 				playerController.Enable();
 
-				//Cursor.SetCursor()
 				Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+				shooter.enabled = false;
 			}
 			else
 			{
@@ -41,6 +47,7 @@ public class Tower : MonoBehaviour
 				playerController.Disable();
 
 				Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
+				shooter.enabled = true;
 			}
 		}
 	}
@@ -65,5 +72,24 @@ public class Tower : MonoBehaviour
 			inTrigger = false;
 			isTowerTaken = false;
 		}
+	}
+
+	private void ControlCursor()
+	{
+		//Get the Screen positions of the object
+		Vector2 towerPos = Camera.main.WorldToViewportPoint(gameObject.transform.position);
+
+		//Get the Screen position of the mouse
+		Vector2 cursorPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+
+		var playerToCursor = cursorPos - towerPos;
+
+		var dir = playerToCursor.normalized;
+
+		var cursorVector = dir * radius;
+
+		var finalPos = towerPos + cursorVector;
+
+		//Input.mousePosition = finalPos;
 	}
 }

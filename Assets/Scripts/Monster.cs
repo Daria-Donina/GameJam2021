@@ -14,7 +14,7 @@ public class Monster : MonoBehaviour
 	public void Start()
 	{
 		collider = GetComponent<Collider2D>();
-		Shooter.ShotFired += (sender, ray) => DetectHit(ray);
+		Shooter.ShotFired += DetectHit;
 	}
 
 	public void Clone()
@@ -22,11 +22,16 @@ public class Monster : MonoBehaviour
 
 	}
 
-	void DetectHit(Ray ray)
+	void DetectHit(object sender, Ray ray)
 	{
 		if (collider.bounds.IntersectRay(ray))
 		{
 			Destroy(gameObject);
 		}
+	}
+
+	private void OnDestroy()
+	{
+		Shooter.ShotFired -= DetectHit;
 	}
 }
