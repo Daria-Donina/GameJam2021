@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d7b29d60787de41933c858137440c7, type: 3}
+  m_Name: Bug
+  m_EditorClassIdentifier: 
+  id: 0
+  type: 0
+  health: 12
+  damage: 2
+  movespeed: 4
+  image: {fileID: 21300000, guid: 6175e906d5113b945b2747c15c22489d, type: 3}
+  description: 

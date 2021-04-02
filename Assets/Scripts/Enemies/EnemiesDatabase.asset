@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: EnemiesDatabase
   m_EditorClassIdentifier: 
   EnemiesPool:
+  - {fileID: 11400000, guid: de43d8d61cad08b41b6fd054ebc9949f, type: 2}
   - {fileID: 11400000, guid: f560ed5f590c2aa4194ce158baaa5daa, type: 2}
   - {fileID: 11400000, guid: 7aa9a016a3b93d44c8bb2526fe7dbf61, type: 2}
