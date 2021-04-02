@@ -7,9 +7,13 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 direction;
 
-    private Vector3 rotation;
-
     private Animator animator;
+
+    private RotatorToCursor rotator;
+
+    private Renderer renderer;
+
+    private bool movingAllowed = true;
 
     #region direction constants
     private Vector3 left = Vector3.left;
@@ -22,7 +26,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        rotation = Vector3.zero;
+        rotator = new RotatorToCursor(gameObject);
+        renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -30,23 +35,12 @@ public class PlayerController : MonoBehaviour
     {
         animator.enabled = false;
 
-        KeyPressHandler();
+        if (movingAllowed)
+		{
+            KeyPressHandler();
 
-        //Get the Screen positions of the object
-        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
-
-        //Get the Screen position of the mouse
-        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
-
-        //Get the angle between the points
-        rotation.z = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
-
-        transform.rotation = Quaternion.Euler(rotation);
-    }
-
-    private float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
-    {
-        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+            rotator.Rotate();
+        }
     }
 
     /// <summary>
@@ -129,6 +123,18 @@ public class PlayerController : MonoBehaviour
         //¬ключаем анимацию.
         animator.enabled = true;
     }
+
+	public void Disable()
+	{
+        renderer.enabled = false;
+        movingAllowed = false;
+    }
+
+	public void Enable()
+	{
+        renderer.enabled = true;
+        movingAllowed = true;
+	}
 }
 
 

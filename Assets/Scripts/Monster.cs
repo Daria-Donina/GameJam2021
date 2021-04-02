@@ -5,15 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts
+public class Monster : MonoBehaviour
 {
-	public class Monster
+	public Vector3 SpawnPoint { get; set; }
+
+	private Collider2D collider;
+
+	public void Start()
 	{
-		public Vector3 SpawnPoint { get; set; }
+		collider = GetComponent<Collider2D>();
+		Shooter.ShotFired += (sender, ray) => DetectHit(ray);
+	}
 
-		public void Clone()
+	public void Clone()
+	{
+
+	}
+
+	void DetectHit(Ray ray)
+	{
+		if (collider.bounds.IntersectRay(ray))
 		{
-
+			Destroy(gameObject);
 		}
 	}
 }
