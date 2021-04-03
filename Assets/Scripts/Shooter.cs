@@ -29,13 +29,10 @@ public class Shooter : MonoBehaviour
 		Vector2 positionOnScreen = transform.position;
 
 		var mousePos = Input.mousePosition;
-		mousePos.z = 10;
+		mousePos.z = 40;
 
 		//Get the Screen position of the mouse
 		Vector2 mouseOnScreen = Camera.main.ScreenToWorldPoint(mousePos);
-
-		Debug.Log(Input.mousePosition);
-		Debug.Log(mouseOnScreen);
 
 		var ray = new Ray(positionOnScreen, mouseOnScreen - positionOnScreen);
 		Debug.DrawRay(positionOnScreen, mouseOnScreen - positionOnScreen, Color.blue, 1);

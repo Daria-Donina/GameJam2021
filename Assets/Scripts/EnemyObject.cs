@@ -36,6 +36,8 @@ public class EnemyObject : MonoBehaviour
 		if (collider.bounds.IntersectRay(shot.Ray))
 		{
 			Health -= shot.Damage;
+			Debug.Log(shot.Damage);
+			Debug.Log(Health);
 		}
 	}
 
