@@ -41,6 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enemy
+    uniqueID: 3992499979
+    locked: 0
+  - name: Gates
+    uniqueID: 2096126037
+    locked: 0
+  - name: Filter
+    uniqueID: 1259698343
+    locked: 0
   - name: Tower
     uniqueID: 1146034325
     locked: 0
