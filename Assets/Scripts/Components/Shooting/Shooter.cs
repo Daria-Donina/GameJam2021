@@ -7,10 +7,9 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-
 	public int Damage { get; set; }
 
-	public void Update()
+	private void Update()
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
@@ -18,11 +17,18 @@ public class Shooter : MonoBehaviour
 		}
 	}
 
+	[SerializeField]
+	private AudioSource audioSrc;
+
 	public static event EventHandler<ShotArgs> ShotFired;
 
 	public void Shoot()
 	{
-		// звук
+		if (audioSrc)
+		{
+			audioSrc.PlayOneShot(audioSrc.clip);
+		}
+
 		// анимация
 
 		//Get the Screen positions of the object
