@@ -8,6 +8,8 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
 
+	public int Damage { get; set; }
+
 	public void Update()
 	{
 		if (Input.GetMouseButtonDown(0))
@@ -16,7 +18,7 @@ public class Shooter : MonoBehaviour
 		}
 	}
 
-	public static event EventHandler<Ray> ShotFired;
+	public static event EventHandler<ShotArgs> ShotFired;
 
 	public void Shoot()
 	{
@@ -38,6 +40,6 @@ public class Shooter : MonoBehaviour
 		var ray = new Ray(positionOnScreen, mouseOnScreen - positionOnScreen);
 		Debug.DrawRay(positionOnScreen, mouseOnScreen - positionOnScreen, Color.blue, 1);
 
-		ShotFired?.Invoke(this, ray);
+		ShotFired?.Invoke(this, new ShotArgs(ray, Damage));
 	}
 }

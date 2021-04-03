@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1817162121617824393}
   - component: {fileID: 6866685851508433534}
   - component: {fileID: 1850692244072878463}
+  - component: {fileID: 95351656660707970}
   m_Layer: 0
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -302467317
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6175e906d5113b945b2747c15c22489d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -215,3 +216,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4799979a42076d247bc033fb496207c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+--- !u!114 &95351656660707970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8414376653710251043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4799979a42076d247bc033fb496207c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100

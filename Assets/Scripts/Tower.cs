@@ -20,6 +20,9 @@ public class Tower : MonoBehaviour
 	public int radius;
 
 	[SerializeField]
+	private int damage;
+
+	[SerializeField]
 	private Texture2D cursorArrow;
 
 	void Start()
@@ -27,6 +30,7 @@ public class Tower : MonoBehaviour
 		rotator = new RotatorToCursor(gameObject);
 		playerController = player.GetComponent<PlayerController>();
 		shooter = GetComponent<Shooter>();
+		shooter.Damage = damage;
 	}
 
 	void Update()

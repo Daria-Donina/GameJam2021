@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   radius: 100
+  damage: 50
   cursorArrow: {fileID: 2800000, guid: 669310a249cc37c499695792b64b4147, type: 3}
 --- !u!114 &1193450260485018627
 MonoBehaviour:
