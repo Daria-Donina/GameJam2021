@@ -15,10 +15,10 @@ GameObject:
   - component: {fileID: 5813761976874909816}
   - component: {fileID: 1817162121617824393}
   - component: {fileID: 6866685851508433534}
-  - component: {fileID: 95351656660707970}
+  - component: {fileID: 8943179587018017434}
   m_Layer: 0
   m_Name: EnemyPrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!114 &95351656660707970
+--- !u!114 &8943179587018017434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,7 +212,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8414376653710251043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4799979a42076d247bc033fb496207c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 734780181f4deb14482e5d241d8db408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  damage: 20

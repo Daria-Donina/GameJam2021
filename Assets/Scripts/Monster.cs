@@ -5,29 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class EnemyObject : MonoBehaviour
+public class Monster : DestroyedObject
 {
+	public int damage;
+
 	private Collider2D collider;
 
-	[SerializeField]
-	private int health;
-
-	public int Health
-	{
-		get => health;
-		set
-		{
-			health = value;
-			if (health <= 0)
-			{
-				Destroy(gameObject);
-			}
-		}
-	}
-
-	public void Start()
+	private void Start()
 	{
 		collider = GetComponent<Collider2D>();
+
 		Shooter.ShotFired += DetectHit;
 	}
 
@@ -35,9 +22,7 @@ public class EnemyObject : MonoBehaviour
 	{
 		if (collider.bounds.IntersectRay(shot.Ray))
 		{
-			Health -= shot.Damage;
-			Debug.Log(shot.Damage);
-			Debug.Log(Health);
+			Hit(shot.Damage);
 		}
 	}
 
