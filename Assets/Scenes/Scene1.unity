@@ -337,6 +337,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1862691327}
+    - target: {fileID: 5710470231596151952, guid: 0aef6d45e8cf21a4c9d06467677d9d98, type: 3}
+      propertyPath: cursorArrow
+      value: 
+      objectReference: {fileID: 2800000, guid: 669310a249cc37c499695792b64b4147, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aef6d45e8cf21a4c9d06467677d9d98, type: 3}
 --- !u!1 &957887835

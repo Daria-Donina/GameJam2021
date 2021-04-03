@@ -46,7 +46,7 @@ public class Tower : MonoBehaviour
 				isTowerTaken = true;
 				playerController.Disable();
 
-				Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
+				Cursor.SetCursor(cursorArrow, new Vector2(16, 16), CursorMode.ForceSoftware);
 				shooter.enabled = true;
 			}
 		}

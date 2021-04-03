@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   radius: 100
-  cursorArrow: {fileID: 2800000, guid: 36c4dd84fbbf0744cb99dae0b8fdcf7d, type: 3}
+  cursorArrow: {fileID: 2800000, guid: 669310a249cc37c499695792b64b4147, type: 3}
 --- !u!114 &1193450260485018627
 MonoBehaviour:
   m_ObjectHideFlags: 0
