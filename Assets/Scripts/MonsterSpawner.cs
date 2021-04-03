@@ -11,13 +11,13 @@ public class MonsterSpawner : MonoBehaviour
 
     public int[] Enemies;
     Enemy current;
-    Vector3 spawnerPosition;
+    //Vector3 spawnerPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnerPosition = transform.position;
-        SpawnWaveOfEnemies(1, spawnerPosition);
+        //spawnerPosition = transform.position;
+       // SpawnWaveOfEnemies(1, spawnerPosition);
         
     }    
 
@@ -26,26 +26,23 @@ public class MonsterSpawner : MonoBehaviour
     {
         
     }
-    public void SpawnWaveOfEnemies(int wavesCount, Vector3 place)
+    public void SpawnWaveOfEnemies()
     {
-        for (int k = 0; k < wavesCount; k++)
+        for (int i = 0; i < Enemies.Length; i++)
         {
-            for (int i = 0; i < Enemies.Length; i++)
+            current = enemiesDb.GetEnemyData(i);
+            for (int j = 0; j < Enemies[i]; j++)
             {
-                current = enemiesDb.GetEnemyData(i);
-                for (int j = 0; j < Enemies[i]; j++)
-                {
-                    var obj = Instantiate(enemyPrefab, place, Quaternion.identity, transform);
-                    obj.GetComponent<SpriteRenderer>().sprite = current.image;
-                    obj.GetComponent<AIPath>().maxSpeed = current.movespeed;
-                    obj.GetComponent<AIDestinationSetter>().target = playerObject.transform;
-                }
+                var obj = Instantiate(enemyPrefab, transform.position, Quaternion.identity, transform);
+                obj.GetComponent<SpriteRenderer>().sprite = current.image;
+                obj.GetComponent<AIPath>().maxSpeed = current.movespeed;
+                obj.GetComponent<AIDestinationSetter>().target = playerObject.transform;
             }
         }
     }
 
-    public void TestSpawnButton()
-    {
-        SpawnWaveOfEnemies(1, spawnerPosition);
-    }
+    //public void TestSpawnButton()
+    //{
+    //    SpawnWaveOfEnemies(1, spawnerPosition);
+    //}
 }
