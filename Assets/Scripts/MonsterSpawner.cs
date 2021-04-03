@@ -11,11 +11,14 @@ public class MonsterSpawner : MonoBehaviour
 
     public int[] Enemies;
     Enemy current;
+    Vector3 spawnerPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        TestSpawnButton();
+        spawnerPosition = transform.position;
+        SpawnWaveOfEnemies(1, spawnerPosition);
+        
     }    
 
     // Update is called once per frame
@@ -43,6 +46,6 @@ public class MonsterSpawner : MonoBehaviour
 
     public void TestSpawnButton()
     {
-        SpawnWaveOfEnemies(1, new Vector3(0,0,0));
+        SpawnWaveOfEnemies(1, spawnerPosition);
     }
 }
