@@ -13,6 +13,8 @@ public class Timer : MonoBehaviour
     private float elapsedTime;
 
     private bool timerOn = true;
+
+    private AudioSource audioSrc;
     public bool TimerOn
 	{
         get => timerOn;
@@ -21,30 +23,45 @@ public class Timer : MonoBehaviour
             if (value == false && timerOn)
 			{
                 TimerEnded?.Invoke(this, EventArgs.Empty);
+                timerText.enabled = false;
 			}
 
             timerOn = value;
         }
 	}
 
-    public static event EventHandler<EventArgs> TimerEnded;
+	public float ElapsedTime
+	{
+        get => elapsedTime;
+        set
+		{
+            if (value < 6 && elapsedTime > 6)
+			{
+                audioSrc.PlayOneShot(audioSrc.clip);
+            }
+            elapsedTime = value;
+        }
+	}
+
+	public static event EventHandler<EventArgs> TimerEnded;
 
     // Start is called before the first frame update
     void Start()
     {
         timerText = GetComponent<Text>();
         timerText.text = "00:00";
-        elapsedTime = startTime;
+        ElapsedTime = startTime;
+        audioSrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (elapsedTime > 0 && TimerOn)
+        if (ElapsedTime > 0 && TimerOn)
 		{
-            elapsedTime -= Time.deltaTime;
+            ElapsedTime -= Time.deltaTime;
 
-            timePlaying = TimeSpan.FromSeconds(elapsedTime);
+            timePlaying = TimeSpan.FromSeconds(ElapsedTime);
 
             timerText.text = timePlaying.ToString("mm':'ss");
         }
@@ -57,7 +74,8 @@ public class Timer : MonoBehaviour
     private const float startTime = 60;
     public void StartTimer()
 	{
-        elapsedTime = startTime;
+        ElapsedTime = startTime;
         TimerOn = true;
+        timerText.enabled = true;
 	}
 }
