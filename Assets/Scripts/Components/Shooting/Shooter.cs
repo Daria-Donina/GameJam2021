@@ -9,8 +9,9 @@ public class Shooter : MonoBehaviour
 {
 	public int Damage { get; set; }
 
-	public Transform Spawn;
-	public GameObject CorallPrefab;	
+	public Transform Spawn1;
+	public Transform Spawn2;
+	public GameObject BulletPrefab;	
 	public float bulletSpeed = 10f;
 	
 
@@ -51,7 +52,13 @@ public class Shooter : MonoBehaviour
 
 		ShotFired?.Invoke(this, new ShotArgs(ray, Damage));
 
-		GameObject bullet = Instantiate(CorallPrefab, Spawn.position, Spawn.rotation);
-		bullet.GetComponent<Rigidbody2D>().AddForce(Spawn.up * 2000);
+		GameObject bullet = Instantiate(BulletPrefab, Spawn1.position, Spawn1.rotation);
+		bullet.GetComponent<Rigidbody2D>().AddForce(Spawn1.up * 2000);
+
+        if (Spawn2!=null)
+        {
+			GameObject bullet2 = Instantiate(BulletPrefab, Spawn2.position, Spawn2.rotation);
+			bullet2.GetComponent<Rigidbody2D>().AddForce(Spawn2.up * 2000);
+		}
 	}
 }
