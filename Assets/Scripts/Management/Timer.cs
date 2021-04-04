@@ -15,6 +15,12 @@ public class Timer : MonoBehaviour
     private bool timerOn = true;
 
     private AudioSource audioSrc;
+
+    //For daytime controll
+    public GameObject DayTimeLayer;
+    SpriteRenderer Filter;
+    float alphaValue;
+
     public bool TimerOn
 	{
         get => timerOn;
@@ -52,6 +58,9 @@ public class Timer : MonoBehaviour
         timerText.text = "00:00";
         ElapsedTime = startTime;
         audioSrc = GetComponent<AudioSource>();
+
+        Filter = DayTimeLayer.GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
@@ -69,6 +78,17 @@ public class Timer : MonoBehaviour
 		{
             TimerOn = false;
 		}
+
+        //perfomance expensive
+        if (ElapsedTime > 5)
+        {
+            alphaValue = Mathf.Lerp(0f, 1f, (60 - ElapsedTime) / 60);
+            Filter.color = new Color(1, 1, 1, alphaValue);
+        }
+        else
+        {
+            alphaValue = 1;
+        }
     }
 
     private const float startTime = 60;
