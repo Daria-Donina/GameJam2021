@@ -20,16 +20,18 @@ public class Temple : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Enemy" && !audioStarted)
 		{
-            _audio.PlayOneShot(_audio.clip);
-            audioStarted = true;
+            StartCoroutine("GameOver");
+            
         }
 	}
 
     public IEnumerator GameOver()
     {
         text.text = "Подводный город обречен. Вы продержались "+ (spawnManager.waveCounter -1).ToString() + " волн.";
+        _audio.PlayOneShot(_audio.clip);
+        audioStarted = true;
         yield return new WaitForSeconds(10f);
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
     }
 
 
