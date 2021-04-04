@@ -15,15 +15,18 @@ public class DestroyedObject : MonoBehaviour
 	public int Health
 	{
 		get => health;
-		protected set
+		set
 		{
 			health = Math.Min(value, maxHealth);
 			if (health <= 0)
 			{
+				BeforeDestroy();
 				Destroy(gameObject);
 			}
 		}
 	}
+
+	protected virtual void BeforeDestroy() { }
 
 	public int MaxHealth { get => maxHealth; protected set { } }
 
