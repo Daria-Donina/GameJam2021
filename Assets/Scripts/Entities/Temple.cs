@@ -15,7 +15,7 @@ public class Temple : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.gameObject.tag == "Enemy")
+		if (collision.gameObject.tag == "Enemy" && !audioStarted)
 		{
             _audio.PlayOneShot(_audio.clip);
             audioStarted = true;
