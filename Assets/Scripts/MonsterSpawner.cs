@@ -10,14 +10,14 @@ public class MonsterSpawner : MonoBehaviour
     public GameObject playerObject;
 
     public int[] Enemies;
-    Enemy current;
-    //Vector3 spawnerPosition;
+    
 
-    // Start is called before the first frame update
+    Enemy current;
+    
+
+    
     void Start()
-    {
-        //spawnerPosition = transform.position;
-       // SpawnWaveOfEnemies(1, spawnerPosition);
+    {        
         
     }    
 
@@ -26,12 +26,12 @@ public class MonsterSpawner : MonoBehaviour
     {
         
     }
-    public void SpawnWaveOfEnemies()
+    public void SpawnWaveOfEnemies(int waveIndex)
     {
         for (int i = 0; i < Enemies.Length; i++)
         {
             current = enemiesDb.GetEnemyData(i);
-            for (int j = 0; j < Enemies[i]; j++)
+            for (int j = 0; j < Enemies[i*waveIndex]; j++)
             {
                 var obj = Instantiate(enemyPrefab, transform.position, Quaternion.identity, transform);
                 obj.GetComponent<SpriteRenderer>().sprite = current.image;
