@@ -2,10 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
     private int waveCounter;
+    private int NestIndex;
+    public Text wavesCounterText;
+    public Text wavesNestText;
 
     private Transform currentChild;
 
@@ -13,14 +17,16 @@ public class SpawnManager : MonoBehaviour
     private Timer timer;
 
     private void Spawn(object sender, EventArgs args)
-	{
-        currentChild = transform.GetChild(UnityEngine.Random.Range(0, 4));
+    {
+        NestIndex = UnityEngine.Random.Range(0, 4);
+        currentChild = transform.GetChild(NestIndex);
 
         var spawner = currentChild.GetComponent<MonsterSpawner>();
 
         spawner.SpawnWaveOfEnemies();
         waveCounter++;
-	}
+        StartCoroutine("ShowWaveCounter");
+    }
 
 
     // Start is called before the first frame update
@@ -34,11 +40,40 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         if (waveCounter > 0)
-		{
+        {
             if (currentChild.childCount == 0 && !timer.TimerOn)
             {
                 timer.StartTimer();
             }
         }
     }
+
+
+    IEnumerator ShowWaveCounter()
+    {
+        if (waveCounter > 0)
+        {
+            wavesCounterText.text = "WAVE #" + waveCounter.ToString();
+
+            switch (NestIndex)
+            {
+                case 1:
+                    wavesNestText.text = "WAVE COMING FROM NORTH";
+                    break;
+                case 2:
+                    wavesNestText.text = "WAVE COMING FROM WEST";
+                    break;
+                case 3:
+                    wavesNestText.text = "WAVE COMING FROM EAST";
+                    break;
+                case 4:
+                    wavesNestText.text = "WAVE COMING FROM SOUTH";
+                    break;
+            }
+        }
+        yield return new WaitForSeconds(10f);
+        wavesCounterText.text = " ";
+        wavesNestText.text = " ";
+    }
+   
 }
