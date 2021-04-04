@@ -30,6 +30,9 @@ public class Tower : MonoBehaviour
 	[SerializeField]
 	private AudioSource seatingSound;
 
+	
+	
+
 
 	void Start()
 	{
@@ -52,7 +55,8 @@ public class Tower : MonoBehaviour
 				playerController.Enable();
 				seatingSound.Play();
 				Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-				shooter.enabled = false;				
+				shooter.enabled = false;
+				
 			}
 			else
 			{
@@ -61,6 +65,7 @@ public class Tower : MonoBehaviour
 				seatingSound.Play();
 				Cursor.SetCursor(cursorArrow, new Vector2(16, 16), CursorMode.ForceSoftware);
 				shooter.enabled = true;
+				
 			}
 		}
 	}
