@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15d7b29d60787de41933c858137440c7, type: 3}
-  m_Name: Bug
+  m_Name: Slythereen
   m_EditorClassIdentifier: 
-  id: 0
+  id: 2
   type: 0
-  health: 12
-  damage: 2
-  movespeed: 4
-  image: {fileID: 21300000, guid: 6175e906d5113b945b2747c15c22489d, type: 3}
-  description: "\u0446\u0432"
+  health: 50
+  damage: 4
+  movespeed: 10
+  image: {fileID: 21300000, guid: 5861268a16079ef4aa4265f644d44b77, type: 3}
+  description: fast

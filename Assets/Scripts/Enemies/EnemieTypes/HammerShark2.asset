@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15d7b29d60787de41933c858137440c7, type: 3}
-  m_Name: Murloc
+  m_Name: HammerShark2
   m_EditorClassIdentifier: 
-  id: 1
-  type: 1
-  health: 20
-  damage: 5
-  movespeed: 10
-  image: {fileID: 21300000, guid: 0371df569e6ca0a469ae71d81ee11b57, type: 3}
-  description: Simple underwater warrior.
+  id: 4
+  type: 0
+  health: 70
+  damage: 8
+  movespeed: 5
+  image: {fileID: 21300000, guid: f550df07616245648877cd9a34910ce3, type: 3}
+  description: 

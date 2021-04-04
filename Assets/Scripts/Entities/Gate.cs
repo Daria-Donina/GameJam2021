@@ -25,7 +25,8 @@ public class Gate : DestroyedObject
 				lastHitTime = Time.time;
 			}
 
-			Debug.Log(Health);
+			Debug.Log("Gate HP: " + Health);
+
 		}
 	}
 }

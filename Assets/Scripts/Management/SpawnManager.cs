@@ -19,6 +19,7 @@ public class SpawnManager : MonoBehaviour
     private void Spawn(object sender, EventArgs args)
     {
         NestIndex = UnityEngine.Random.Range(0, 4);
+        Debug.Log("Nest Index: " + NestIndex);
         currentChild = transform.GetChild(NestIndex);
 
         var spawner = currentChild.GetComponent<MonsterSpawner>();

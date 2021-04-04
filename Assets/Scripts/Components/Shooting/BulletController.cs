@@ -9,7 +9,7 @@ public class BulletController : MonoBehaviour
     {
         StartCoroutine("Transforming");
         Destroy(gameObject, 1);
-
+        
     }
 
     //void OnTriggerEnter(Collider other)
