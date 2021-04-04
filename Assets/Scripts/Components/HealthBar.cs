@@ -5,12 +5,9 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] 
-    private Slider sliderHealthBar;
-    [SerializeField] 
-    private GameObject gameobject;
-
-    private DestroyedObject destroyedObject;
+    public Slider sliderHealthBar;
+    public GameObject gameobject;
+    DestroyedObject destroyedObject;
 
     private void Start()
     {
