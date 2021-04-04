@@ -28,17 +28,21 @@ public class MonsterSpawner : MonoBehaviour
     }
     public void SpawnWaveOfEnemies(int waveIndex)
     {
-        for (int i = 0; i < Enemies.Length; i++)
+        for (int w = 0; w < waveIndex; w++)
         {
-            current = enemiesDb.GetEnemyData(i);
-            for (int j = 0; j < Enemies[i*waveIndex]; j++)
+            for (int i = 0; i < Enemies.Length; i++)
             {
-                var obj = Instantiate(enemyPrefab, transform.position, Quaternion.identity, transform);
-                obj.GetComponent<SpriteRenderer>().sprite = current.image;
-                obj.GetComponent<AIPath>().maxSpeed = current.movespeed;
-                obj.GetComponent<AIDestinationSetter>().target = playerObject.transform;
+                current = enemiesDb.GetEnemyData(i);
+                for (int j = 0; j < Enemies[i]; j++)
+                {
+                    var obj = Instantiate(enemyPrefab, transform.position, Quaternion.identity, transform);
+                    obj.GetComponent<SpriteRenderer>().sprite = current.image;
+                    obj.GetComponent<AIPath>().maxSpeed = current.movespeed;
+                    obj.GetComponent<AIDestinationSetter>().target = playerObject.transform;
+                }
             }
-        }
+        }        
+        
     }
 
     //public void TestSpawnButton()
