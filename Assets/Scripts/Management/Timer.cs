@@ -82,7 +82,7 @@ public class Timer : MonoBehaviour
         //perfomance expensive
         if (ElapsedTime > 5)
         {
-            alphaValue = Mathf.Lerp(0f, 1f, (60 - ElapsedTime) / 60);
+            alphaValue = Mathf.Lerp(0f, 1f, (20 - ElapsedTime) / 20);
             Filter.color = new Color(1, 1, 1, alphaValue);
         }
         else

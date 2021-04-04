@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
-    private int waveCounter;
+    private int waveCounter=0;
     private int NestIndex;
     public Text wavesCounterText;
     public Text wavesNestText;
@@ -25,10 +25,10 @@ public class SpawnManager : MonoBehaviour
         currentChild = transform.GetChild(NestIndex);
 
         var spawner = currentChild.GetComponent<MonsterSpawner>();
-
-        spawner.SpawnWaveOfEnemies();
+        
         waveCounter++;
         StartCoroutine("ShowWaveCounter");
+        spawner.SpawnWaveOfEnemies(waveCounter);
     }
 
     public AudioSource audioScr;
