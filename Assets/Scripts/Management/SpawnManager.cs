@@ -58,16 +58,16 @@ public class SpawnManager : MonoBehaviour
 
             switch (NestIndex)
             {
-                case 1:
+                case 0:
                     wavesNestText.text = "WAVE COMING FROM NORTH";
                     break;
-                case 2:
+                case 1:
                     wavesNestText.text = "WAVE COMING FROM WEST";
                     break;
-                case 3:
+                case 2:
                     wavesNestText.text = "WAVE COMING FROM EAST";
                     break;
-                case 4:
+                case 3:
                     wavesNestText.text = "WAVE COMING FROM SOUTH";
                     break;
             }
