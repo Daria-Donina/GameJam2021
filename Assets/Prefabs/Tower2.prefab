@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   radius: 100
-  damage: 100
+  damage: 20
   cursorArrow: {fileID: 2800000, guid: 669310a249cc37c499695792b64b4147, type: 3}
   seatingSound: {fileID: 269220483092524800}
   _camera: {fileID: 0}

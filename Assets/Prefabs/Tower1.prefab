@@ -260,10 +260,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   radius: 100
-  damage: 50
+  damage: 20
   cursorArrow: {fileID: 2800000, guid: 669310a249cc37c499695792b64b4147, type: 3}
   seatingSound: {fileID: 3535277140077375718}
-  virtualCamera: {fileID: 0}
+  _camera: {fileID: 0}
+  maxDistanse: 0
+  minDistanse: 0
 --- !u!114 &7127062120162951016
 MonoBehaviour:
   m_ObjectHideFlags: 0

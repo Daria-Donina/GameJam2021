@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdaf3b41530db8d42a1e66fc14dbe24d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  maxHealth: 1000
+  health: 500
+  maxHealth: 500
   timeBetweenHits: 1
   pic: {fileID: 8374398077773065244}
   damageSprites:
