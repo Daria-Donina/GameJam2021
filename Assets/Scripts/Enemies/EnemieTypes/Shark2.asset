@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   type: 1
-  health: 20
+  health: 150
   damage: 8
-  movespeed: 5
+  movespeed: 8
   image: {fileID: 21300000, guid: 3d4ab0197f38db847908bfe70a31f245, type: 3}
   description: Another enemy.

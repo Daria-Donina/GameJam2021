@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
-    private int waveCounter=0;
+    public int waveCounter;
     private int NestIndex;
     public Text wavesCounterText;
     public Text wavesNestText;
