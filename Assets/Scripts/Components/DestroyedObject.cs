@@ -15,7 +15,7 @@ public class DestroyedObject : MonoBehaviour
 	public int Health
 	{
 		get => health;
-		protected set
+		set
 		{
 			health = Math.Min(value, maxHealth);
 			if (health <= 0)
