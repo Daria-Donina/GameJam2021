@@ -41,8 +41,15 @@ public class MonsterSpawner : MonoBehaviour
                     obj.GetComponent<AIDestinationSetter>().target = playerObject.transform;
                 }
             }
-        }        
-        
+        }
+        if (waveIndex%3==0)
+        {
+            current = enemiesDb.GetEnemyData(7);
+            var obj = Instantiate(enemyPrefab, transform.position, Quaternion.identity, transform);
+            obj.GetComponent<SpriteRenderer>().sprite = current.image;
+            obj.GetComponent<AIPath>().maxSpeed = current.movespeed;
+            obj.GetComponent<AIDestinationSetter>().target = playerObject.transform;
+        }
     }
 
     //public void TestSpawnButton()
