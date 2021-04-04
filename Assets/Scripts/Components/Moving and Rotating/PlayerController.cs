@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 		{
             KeyPressHandler();
 
-            rotator.Rotate();
+            rotator.Rotate(transform.position);
         }
     }
 

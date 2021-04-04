@@ -33,7 +33,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timerText = GetComponent<Text>();
-        timerText.text = "Time: 00:00";
+        timerText.text = "00:00";
         elapsedTime = startTime;
     }
 
@@ -46,7 +46,7 @@ public class Timer : MonoBehaviour
 
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
 
-            timerText.text = "Time: " + timePlaying.ToString("mm':'ss");
+            timerText.text = timePlaying.ToString("mm':'ss");
         }
         else
 		{

@@ -27,6 +27,9 @@ public class Tower : MonoBehaviour
 
 	void Start()
 	{
+		Debug.Log(transform.GetChild(0).position);
+		Debug.Log(transform.position);
+
 		rotator = new RotatorToCursor(gameObject);
 		playerController = player.GetComponent<PlayerController>();
 		shooter = GetComponent<Shooter>();
@@ -65,7 +68,7 @@ public class Tower : MonoBehaviour
 
 		if (isTowerTaken)
 		{
-			rotator.Rotate();
+			rotator.Rotate(transform.GetChild(0).position);
 		}
 	}
 

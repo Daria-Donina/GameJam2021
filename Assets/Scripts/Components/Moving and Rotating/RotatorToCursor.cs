@@ -16,19 +16,27 @@ public class RotatorToCursor
         this.gameObject = gameObject;
     }
 
-    public void Rotate()
+    private float lastFrameAngle;
+
+
+    public void Rotate(Vector3 rotationCenter)
 	{
         //Get the Screen positions of the object
-        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(gameObject.transform.position);
+        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(rotationCenter);
 
         //Get the Screen position of the mouse
         Vector2 mouseOnScreen = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
         //Get the angle between the points
-        rotation.z = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
+        //rotation.z = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
+        var angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
 
-        gameObject.transform.rotation = Quaternion.Euler(rotation);
+        gameObject.transform.RotateAround(rotationCenter, Vector3.forward, angle - lastFrameAngle);
+        //gameObject.transform.rotation = Quaternion.Euler(rotation);
+
+        lastFrameAngle = angle;
     }
+
 
     private float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
     {
