@@ -3738,6 +3738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DayTimeLayer: {fileID: 796758232}
+  startTime: 60
 --- !u!114 &2050278475
 MonoBehaviour:
   m_ObjectHideFlags: 0

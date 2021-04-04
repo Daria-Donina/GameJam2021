@@ -91,7 +91,7 @@ public class Timer : MonoBehaviour
         }
     }
 
-    private const float startTime = 60;
+    public float startTime;
     public void StartTimer()
 	{
         ElapsedTime = startTime;

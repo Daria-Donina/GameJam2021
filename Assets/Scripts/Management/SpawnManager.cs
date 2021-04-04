@@ -20,6 +20,8 @@ public class SpawnManager : MonoBehaviour
     {
         NestIndex = UnityEngine.Random.Range(0, 4);
         Debug.Log("Nest Index: " + NestIndex);
+        Debug.Log(this);
+
         currentChild = transform.GetChild(NestIndex);
 
         var spawner = currentChild.GetComponent<MonsterSpawner>();
@@ -35,7 +37,12 @@ public class SpawnManager : MonoBehaviour
     {
         timer = timerObject.GetComponent<Timer>();
         Timer.TimerEnded += Spawn;
-        Monster.MonsterDied += (sender, audio) => audioScr.PlayOneShot(audio);
+        Monster.MonsterDied += PlayAudio;
+    }
+
+    private void PlayAudio(object sender, AudioClip audio)
+	{
+        audioScr.PlayOneShot(audio);
     }
 
     // Update is called once per frame
@@ -77,5 +84,11 @@ public class SpawnManager : MonoBehaviour
         wavesCounterText.text = " ";
         wavesNestText.text = " ";
     }
-   
+
+	private void OnDestroy()
+	{
+        Timer.TimerEnded -= Spawn;
+        Monster.MonsterDied -= PlayAudio;
+    }
+
 }
