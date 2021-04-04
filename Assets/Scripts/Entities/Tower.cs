@@ -30,8 +30,14 @@ public class Tower : MonoBehaviour
 	[SerializeField]
 	private AudioSource seatingSound;
 
-	
-	
+	[SerializeField]
+	CinemachineVirtualCamera _camera;
+
+	[SerializeField]
+	private int maxDistanse;
+
+	[SerializeField]
+	private int minDistanse;
 
 
 	void Start()
@@ -53,6 +59,8 @@ public class Tower : MonoBehaviour
 			{
 				isTowerTaken = false;
 				playerController.Enable();
+				_camera.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = minDistanse;
+
 				seatingSound.Play();
 				Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 				shooter.enabled = false;
@@ -62,6 +70,8 @@ public class Tower : MonoBehaviour
 			{
 				isTowerTaken = true;
 				playerController.Disable();
+				_camera.GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = maxDistanse;
+
 				seatingSound.Play();
 				Cursor.SetCursor(cursorArrow, new Vector2(16, 16), CursorMode.ForceSoftware);
 				shooter.enabled = true;
