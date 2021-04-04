@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinemachine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ public class Tower : MonoBehaviour
 {
 	[SerializeField]
 	private GameObject player;
+	
 	private RotatorToCursor rotator;
 	private bool isTowerTaken;
 	private bool inTrigger;
@@ -25,15 +27,19 @@ public class Tower : MonoBehaviour
 	[SerializeField]
 	private Texture2D cursorArrow;
 
+	[SerializeField]
+	private AudioSource seatingSound;
+
+
 	void Start()
 	{
-		Debug.Log(transform.GetChild(0).position);
-		Debug.Log(transform.position);
+		//Debug.Log(transform.GetChild(0).position);
+		//Debug.Log(transform.position);
 
 		rotator = new RotatorToCursor(gameObject);
 		playerController = player.GetComponent<PlayerController>();
 		shooter = GetComponent<Shooter>();
-		shooter.Damage = damage;
+		shooter.Damage = damage;		
 	}
 
 	void Update()
@@ -44,15 +50,15 @@ public class Tower : MonoBehaviour
 			{
 				isTowerTaken = false;
 				playerController.Enable();
-
+				seatingSound.Play();
 				Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-				shooter.enabled = false;
+				shooter.enabled = false;				
 			}
 			else
 			{
 				isTowerTaken = true;
 				playerController.Disable();
-
+				seatingSound.Play();
 				Cursor.SetCursor(cursorArrow, new Vector2(16, 16), CursorMode.ForceSoftware);
 				shooter.enabled = true;
 			}

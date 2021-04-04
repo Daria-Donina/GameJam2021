@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private RotatorToCursor rotator;
 
-    private Renderer renderer;
+    private Renderer _renderer;
 
     private bool movingAllowed = true;
 
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rotator = new RotatorToCursor(gameObject);
-        renderer = GetComponent<Renderer>();
+        _renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -126,13 +126,13 @@ public class PlayerController : MonoBehaviour
 
 	public void Disable()
 	{
-        renderer.enabled = false;
+        _renderer.enabled = false;
         movingAllowed = false;
     }
 
 	public void Enable()
 	{
-        renderer.enabled = true;
+        _renderer.enabled = true;
         movingAllowed = true;
 	}
 }

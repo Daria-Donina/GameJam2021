@@ -9,18 +9,25 @@ public class Monster : DestroyedObject
 {
 	public int damage;
 
-	private Collider2D collider;
+	private Collider2D _collider;
+	public AudioSource[] playlist;
+	AudioSource deathTrack;
+	int trackNumber;
 
 	private void Start()
 	{
-		collider = GetComponent<Collider2D>();
+		_collider = GetComponent<Collider2D>();
 
 		Shooter.ShotFired += DetectHit;
+
+		trackNumber = UnityEngine.Random.Range(0, 3);
+		Debug.Log(trackNumber);
+		deathTrack = playlist[trackNumber];
 	}
 
 	void DetectHit(object sender, ShotArgs shot)
 	{
-		if (collider.bounds.IntersectRay(shot.Ray))
+		if (_collider.bounds.IntersectRay(shot.Ray))
 		{
 			Hit(shot.Damage);
 		}
@@ -28,6 +35,8 @@ public class Monster : DestroyedObject
 
 	private void OnDestroy()
 	{
+		deathTrack.Play();
 		Shooter.ShotFired -= DetectHit;
+		
 	}
 }

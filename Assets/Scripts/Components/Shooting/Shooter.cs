@@ -9,8 +9,14 @@ public class Shooter : MonoBehaviour
 {
 	public int Damage { get; set; }
 
+	public Transform Spawn;
+	public GameObject CorallPrefab;	
+	public float bulletSpeed = 10f;
+	
+
+
 	private void Update()
-	{
+	{		
 		if (Input.GetMouseButtonDown(0))
 		{
 			Shoot();
@@ -44,5 +50,8 @@ public class Shooter : MonoBehaviour
 		Debug.DrawRay(positionOnScreen, mouseOnScreen - positionOnScreen, Color.blue, 1);
 
 		ShotFired?.Invoke(this, new ShotArgs(ray, Damage));
+
+		GameObject bullet = Instantiate(CorallPrefab, Spawn.position, Spawn.rotation);
+		bullet.GetComponent<Rigidbody2D>().AddForce(Spawn.up * 2000);
 	}
 }
