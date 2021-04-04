@@ -10,9 +10,11 @@ public class Monster : DestroyedObject
 	public int damage;
 
 	private Collider2D _collider;
-	public AudioSource[] playlist;
-	AudioSource deathTrack;
+	public AudioClip[] playlist;
+	public AudioClip deathTrack;
 	int trackNumber;
+
+	public static event EventHandler<AudioClip> MonsterDied;
 
 	private void Start()
 	{
@@ -33,10 +35,13 @@ public class Monster : DestroyedObject
 		}
 	}
 
+	protected override void BeforeDestroy()
+	{
+		MonsterDied?.Invoke(this, deathTrack);
+	}
+
 	private void OnDestroy()
 	{
-		deathTrack.Play();
 		Shooter.ShotFired -= DetectHit;
-		
 	}
 }

@@ -20,10 +20,13 @@ public class DestroyedObject : MonoBehaviour
 			health = Math.Min(value, maxHealth);
 			if (health <= 0)
 			{
+				BeforeDestroy();
 				Destroy(gameObject);
 			}
 		}
 	}
+
+	protected virtual void BeforeDestroy() { }
 
 	public int MaxHealth { get => maxHealth; protected set { } }
 

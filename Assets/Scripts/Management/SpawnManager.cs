@@ -29,12 +29,13 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine("ShowWaveCounter");
     }
 
-
+    public AudioSource audioScr;
     // Start is called before the first frame update
     void Start()
     {
         timer = timerObject.GetComponent<Timer>();
         Timer.TimerEnded += Spawn;
+        Monster.MonsterDied += (sender, audio) => audioScr.PlayOneShot(audio);
     }
 
     // Update is called once per frame
