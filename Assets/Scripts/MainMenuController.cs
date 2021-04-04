@@ -15,13 +15,33 @@ public class MainMenuController : MonoBehaviour
         
     }
 
+    public void TutorialButton()
+    {
+        GetComponent<Animator>().SetInteger("MenuIndex", 1);
+    }
+
+    public void TutorialToMainButton()
+    {
+        GetComponent<Animator>().SetInteger("MenuIndex", 2);
+    }
+
+    public void AboutButton()
+    {
+        GetComponent<Animator>().SetInteger("MenuIndex", 3);
+    }
+
+    public void AboutToMainButton()
+    {
+        GetComponent<Animator>().SetInteger("MenuIndex", 4);
+    }
+
     public void StartButton()
     {
-        GetComponent<Animator>().SetBool("isStarting", true);
+        GetComponent<Animator>().SetInteger("MenuIndex", 5);
     }
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync(1);
     }
 }
