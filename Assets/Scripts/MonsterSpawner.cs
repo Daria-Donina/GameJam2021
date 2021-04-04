@@ -39,6 +39,8 @@ public class MonsterSpawner : MonoBehaviour
                     obj.GetComponent<SpriteRenderer>().sprite = current.image;
                     obj.GetComponent<AIPath>().maxSpeed = current.movespeed;
                     obj.GetComponent<AIDestinationSetter>().target = playerObject.transform;
+                    obj.GetComponent<Monster>().Health = (int) current.health;
+                    obj.GetComponent<Monster>().damage = (int)current.damage;
                 }
             }
         }
@@ -49,6 +51,8 @@ public class MonsterSpawner : MonoBehaviour
             obj.GetComponent<SpriteRenderer>().sprite = current.image;
             obj.GetComponent<AIPath>().maxSpeed = current.movespeed;
             obj.GetComponent<AIDestinationSetter>().target = playerObject.transform;
+            obj.GetComponent<Monster>().Health = (int)current.health;
+            obj.GetComponent<Monster>().damage = (int)current.damage;
         }
     }
 
