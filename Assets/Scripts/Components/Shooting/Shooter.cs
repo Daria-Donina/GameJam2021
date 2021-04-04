@@ -42,7 +42,7 @@ public class Shooter : MonoBehaviour
 		Vector2 positionOnScreen = transform.position;
 
 		var mousePos = Input.mousePosition;
-		mousePos.z = 40;
+		mousePos.z = 70;
 
 		//Get the Screen position of the mouse
 		Vector2 mouseOnScreen = Camera.main.ScreenToWorldPoint(mousePos);
