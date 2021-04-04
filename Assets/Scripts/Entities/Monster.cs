@@ -31,6 +31,7 @@ public class Monster : DestroyedObject
 	{
 		if (_collider.bounds.IntersectRay(shot.Ray))
 		{
+			Debug.Log("i was hit");
 			Hit(shot.Damage);
 		}
 	}
