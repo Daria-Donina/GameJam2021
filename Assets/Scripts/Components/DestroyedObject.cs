@@ -9,13 +9,15 @@ public class DestroyedObject : MonoBehaviour
 {
 	[SerializeField]
 	private int health;
+	[SerializeField]
+	private int maxHealth;
 
-	protected int Health
+	public int Health
 	{
 		get => health;
-		set
+		protected set
 		{
-			health = value;
+			health = Math.Min(value, maxHealth);
 			if (health <= 0)
 			{
 				Destroy(gameObject);
@@ -23,8 +25,11 @@ public class DestroyedObject : MonoBehaviour
 		}
 	}
 
+	public int MaxHealth { get => maxHealth; protected set { } }
+
+
 	protected void Hit(int damage)
 	{
 		Health -= damage;
-	}
+	}	
 }
