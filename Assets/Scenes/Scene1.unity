@@ -139,6 +139,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1862691327}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1649800399}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: maxDistanse
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: minDistanse
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5431862227796253438, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
       propertyPath: m_Name
       value: Tower (7)
@@ -1350,6 +1362,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1862691327}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1649800399}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: maxDistanse
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: minDistanse
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5431862227796253438, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
       propertyPath: m_Name
       value: Tower (8)
@@ -1427,6 +1451,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1862691327}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1649800399}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: maxDistanse
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: minDistanse
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
       propertyPath: playerCamera
       value: 
@@ -1557,6 +1593,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1862691327}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1649800399}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: maxDistanse
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: minDistanse
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5431862227796253438, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
       propertyPath: m_Name
       value: Tower (6)
@@ -2194,6 +2242,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1862691327}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1649800399}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: maxDistanse
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: minDistanse
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5877708208801752386, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3900,6 +3960,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1862691327}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1649800399}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: maxDistanse
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: minDistanse
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5877708208801752386, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4307,6 +4379,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1862691327}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1649800399}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: maxDistanse
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 65153490802117065, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
+      propertyPath: minDistanse
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 2453471063230160679, guid: 210da184c44dde749a2fac07056ba86c, type: 3}
       propertyPath: m_Radius
       value: 7
@@ -4392,6 +4476,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1862691327}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1649800399}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: maxDistanse
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420353295827197947, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
+      propertyPath: minDistanse
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5877708208801752386, guid: f1c0ef11dff850b4a80e61198e11300f, type: 3}
       propertyPath: m_RootOrder
       value: 0
