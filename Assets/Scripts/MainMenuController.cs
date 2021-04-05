@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour
 {
+    public GameObject MusicSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class MainMenuController : MonoBehaviour
     public void TutorialButton()
     {
         GetComponent<Animator>().SetInteger("MenuIndex", 1);
+        
     }
 
     public void TutorialToMainButton()
@@ -38,6 +40,7 @@ public class MainMenuController : MonoBehaviour
     public void StartButton()
     {
         GetComponent<Animator>().SetInteger("MenuIndex", 5);
+        MusicSource.GetComponent<Animator>().SetBool("isStarting", true);
     }
 
     public void StartGame()
