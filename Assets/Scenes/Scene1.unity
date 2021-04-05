@@ -1893,7 +1893,7 @@ MonoBehaviour:
   enemiesDb: {fileID: 11400000, guid: 04a242af394b8f0469cd6c3030226803, type: 2}
   enemyPrefab: {fileID: 8414376653710251043, guid: b981174df181349408054cf3e99537f7, type: 3}
   playerObject: {fileID: 901829395}
-  Enemies: 0a00000002000000
+  Enemies: 03000000010000000100000002000000010000000200000001000000
 --- !u!1001 &781633606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2280,7 +2280,7 @@ MonoBehaviour:
   enemiesDb: {fileID: 11400000, guid: 04a242af394b8f0469cd6c3030226803, type: 2}
   enemyPrefab: {fileID: 8414376653710251043, guid: b981174df181349408054cf3e99537f7, type: 3}
   playerObject: {fileID: 901829395}
-  Enemies: 0a00000002000000
+  Enemies: 03000000010000000100000002000000010000000200000001000000
 --- !u!4 &923219030
 Transform:
   m_ObjectHideFlags: 0
@@ -3168,7 +3168,7 @@ MonoBehaviour:
   enemiesDb: {fileID: 11400000, guid: 04a242af394b8f0469cd6c3030226803, type: 2}
   enemyPrefab: {fileID: 8414376653710251043, guid: b981174df181349408054cf3e99537f7, type: 3}
   playerObject: {fileID: 901829395}
-  Enemies: 0a00000002000000
+  Enemies: 03000000010000000100000002000000010000000200000001000000
 --- !u!4 &1529172902
 Transform:
   m_ObjectHideFlags: 0
@@ -3366,7 +3366,7 @@ MonoBehaviour:
   enemiesDb: {fileID: 11400000, guid: 04a242af394b8f0469cd6c3030226803, type: 2}
   enemyPrefab: {fileID: 8414376653710251043, guid: b981174df181349408054cf3e99537f7, type: 3}
   playerObject: {fileID: 901829395}
-  Enemies: 0a00000002000000
+  Enemies: 03000000010000000100000002000000010000000200000001000000
 --- !u!1 &1774649531
 GameObject:
   m_ObjectHideFlags: 3
