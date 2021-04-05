@@ -27,7 +27,27 @@ public class Temple : MonoBehaviour
 
     public IEnumerator GameOver()
     {
-        text.text = "Подводный город обречен. Вы продержались "+ (spawnManager.waveCounter -1).ToString() + " волн.";
+        if (spawnManager.waveCounter - 1 == 1)
+        {
+            text.text = "Подводный город обречен.\nВы продержались " + (spawnManager.waveCounter - 1).ToString() + " волну.";
+        }
+        else if(spawnManager.waveCounter - 1 == 2)
+        {
+            text.text = "Подводный город обречен.\nВы продержались " + (spawnManager.waveCounter - 1).ToString() + " волны.";
+        }
+        else if (spawnManager.waveCounter - 1 == 3)
+        {
+            text.text = "Подводный город обречен.\nВы продержались " + (spawnManager.waveCounter - 1).ToString() + " волны.";
+        }
+        else if (spawnManager.waveCounter - 1 == 4)
+        {
+            text.text = "Подводный город обречен.\nВы продержались " + (spawnManager.waveCounter - 1).ToString() + " волны.";
+        }
+        else
+        {
+            text.text = "Подводный город обречен.\nВы продержались " + (spawnManager.waveCounter - 1).ToString() + " волн.";
+        }
+
         _audio.PlayOneShot(_audio.clip);
         audioStarted = true;
         yield return new WaitForSeconds(10f);
