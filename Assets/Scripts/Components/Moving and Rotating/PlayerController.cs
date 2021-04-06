@@ -3,7 +3,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float speed;
+    private float MaxSpeed;
+    float currentSpeed;
+    float tUp;
+    float tDown;
+    float tLeft;
+    float tRight;
+
 
     private Vector3 direction;
 
@@ -35,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         animator.enabled = false;
 
+
         if (movingAllowed)
 		{
             KeyPressHandler();
@@ -50,22 +57,41 @@ public class PlayerController : MonoBehaviour
 	{
         if (Input.GetKey(KeyCode.A))
         {
-            GoLeft();
+            GoLeft();            
         }
 
         if (Input.GetKey(KeyCode.W))
         {
+            
             GoUp();
         }
 
         if (Input.GetKey(KeyCode.S))
         {
+            
             GoDown();
         }
 
         if (Input.GetKey(KeyCode.D))
         {
+           
             GoRight();
+        }
+        if (!Input.GetKey(KeyCode.A))
+        {
+            tLeft = 0;
+        }
+        if (!Input.GetKey(KeyCode.W))
+        {
+            tUp = 0;
+        }
+        if (!Input.GetKey(KeyCode.S))
+        {
+            tDown = 0;
+        }
+        if (!Input.GetKey(KeyCode.D))
+        {
+            tRight = 0;
         }
     }
 
@@ -75,10 +101,13 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void GoUp()
     {
+        tUp = tUp + Time.deltaTime*2;
+        Debug.Log(tUp);
         //Меняем направление.
         direction = up;
-        transform.position += direction * speed * Time.deltaTime;
-
+        currentSpeed = Mathf.Lerp(2f, MaxSpeed, tUp);
+        transform.position += direction * currentSpeed * Time.deltaTime;        
+        
         //Включаем анимацию.
         animator.enabled = true;
     }
@@ -88,9 +117,13 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void GoDown()
     {
+        tDown = tDown + Time.deltaTime*2;
+        Debug.Log(tDown);
         //Меняем направление.
         direction = down;
-        transform.position += direction * speed * Time.deltaTime;
+        currentSpeed = Mathf.Lerp(2f, MaxSpeed, tDown);
+        transform.position += direction * currentSpeed * Time.deltaTime;
+        
 
         //Включаем анимацию.
         animator.enabled = true;
@@ -101,10 +134,13 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void GoLeft()
     {
+        tLeft = tLeft + Time.deltaTime*2;
+        Debug.Log(tLeft);
         //Меняем направление.
         direction = left;
-        transform.position += direction * speed * Time.deltaTime;
-
+        currentSpeed = Mathf.Lerp(2f, MaxSpeed, tLeft);
+        transform.position += direction * currentSpeed * Time.deltaTime;
+        
 
         //Включаем анимацию.
         animator.enabled = true;
@@ -115,10 +151,13 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void GoRight()
     {
+        tRight = tRight + Time.deltaTime*2;
+        Debug.Log(tRight);
         //Меняем направление.
         direction = right;
-        transform.position += direction * speed * Time.deltaTime;
-
+        currentSpeed = Mathf.Lerp(2f, MaxSpeed, tRight);
+        transform.position += direction * currentSpeed * Time.deltaTime;
+        
 
         //Включаем анимацию.
         animator.enabled = true;
