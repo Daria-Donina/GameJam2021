@@ -53,12 +53,12 @@ public class Shooter : MonoBehaviour
 		ShotFired?.Invoke(this, new ShotArgs(ray, Damage));
 
 		GameObject bullet = Instantiate(BulletPrefab, Spawn1.position, Spawn1.rotation);
-		bullet.GetComponent<Rigidbody2D>().AddForce(Spawn1.up * 2000);
+		bullet.GetComponent<Rigidbody2D>().AddForce(Spawn1.up * 3500);
 
         if (Spawn2!=null)
         {
 			GameObject bullet2 = Instantiate(BulletPrefab, Spawn2.position, Spawn2.rotation);
-			bullet2.GetComponent<Rigidbody2D>().AddForce(Spawn2.up * 2000);
+			bullet2.GetComponent<Rigidbody2D>().AddForce(Spawn2.up * 3500);
 		}
 	}
 }

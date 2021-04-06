@@ -26,10 +26,7 @@ public class Gate : DestroyedObject
 			{
 				Hit(monster.damage);
 				lastHitTime = Time.time;
-			}
-
-			Debug.Log("Gate HP: " + Health);
-
+			}			
 		}
 	}
 
@@ -46,7 +43,7 @@ public class Gate : DestroyedObject
 		}
 		else if (Health >= 800 && Health < 900)
 		{
-			pic.GetComponent<SpriteRenderer>().sprite = damageSprites[1];
+			pic.GetComponent<SpriteRenderer>().sprite = damageSprites[1];			
 		}
 		else if (Health >= 700 && Health < 800)
 		{

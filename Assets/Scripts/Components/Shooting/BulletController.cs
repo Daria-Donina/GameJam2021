@@ -8,7 +8,7 @@ public class BulletController : MonoBehaviour
     private void Start()
     {
         StartCoroutine("Transforming");
-        Destroy(gameObject, 1);
+        Destroy(gameObject, 0.5f);
         
     }
 
@@ -26,7 +26,7 @@ public class BulletController : MonoBehaviour
         for (int i = 0; i < forms.Length; i++)
         {
             GetComponent<SpriteRenderer>().sprite = forms[i];
-            yield return new WaitForSeconds(.05f);            
+            yield return new WaitForSeconds(.02f);            
         }
         
     }

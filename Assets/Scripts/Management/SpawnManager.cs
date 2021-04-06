@@ -16,6 +16,10 @@ public class SpawnManager : MonoBehaviour
     public GameObject timerObject;
     private Timer timer;
 
+    //minimap indicators
+    public GameObject[] MapIndicators;
+    GameObject currentIndicator;
+
     private void Spawn(object sender, EventArgs args)
     {
         NestIndex = UnityEngine.Random.Range(0, 4);
@@ -63,24 +67,29 @@ public class SpawnManager : MonoBehaviour
         if (waveCounter > 0)
         {
             wavesCounterText.text = "WAVE #" + waveCounter.ToString();
-
+            currentIndicator = MapIndicators[NestIndex];
             switch (NestIndex)
             {
                 case 0:
                     wavesNestText.text = "WAVE COMING FROM NORTH";
+                    currentIndicator.SetActive(true);
                     break;
                 case 1:
                     wavesNestText.text = "WAVE COMING FROM WEST";
+                    currentIndicator.SetActive(true);
                     break;
                 case 2:
                     wavesNestText.text = "WAVE COMING FROM EAST";
+                    currentIndicator.SetActive(true);
                     break;
                 case 3:
                     wavesNestText.text = "WAVE COMING FROM SOUTH";
+                    currentIndicator.SetActive(true);
                     break;
             }
         }
         yield return new WaitForSeconds(10f);
+        currentIndicator.SetActive(false);
         wavesCounterText.text = " ";
         wavesNestText.text = " ";
     }
