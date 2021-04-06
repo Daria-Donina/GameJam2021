@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
+    public float DelayForAttack;
     public EnemiesDb enemiesDb;
     public GameObject enemyPrefab;
     public GameObject playerObject;
 
     public int[] Enemies;
     
-
     Enemy current;
-    
 
+    private IEnumerator courutine;
     
     void Start()
-    {        
+    {
         
     }    
 
@@ -38,8 +38,8 @@ public class MonsterSpawner : MonoBehaviour
                     var obj = Instantiate(enemyPrefab, transform.position, Quaternion.identity, transform);
                     obj.GetComponent<SpriteRenderer>().sprite = current.image;
                     obj.GetComponent<AIPath>().maxSpeed = current.movespeed;
-                    obj.GetComponent<AIDestinationSetter>().target = playerObject.transform;
-                    
+                    courutine = AttackDelay(obj, DelayForAttack);
+                    StartCoroutine(courutine);                                       
                 }
             }
         }
@@ -54,6 +54,11 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
 
+    IEnumerator AttackDelay(GameObject obj, float timeDelay)
+    {
+        yield return new WaitForSeconds(timeDelay);
+        obj.GetComponent<AIDestinationSetter>().target = playerObject.transform;
+    }
     //public void TestSpawnButton()
     //{
     //    SpawnWaveOfEnemies(1, spawnerPosition);
