@@ -10,7 +10,7 @@ public class Monster : DestroyedObject
 {
 	public int damage;
 
-	private Collider2D _collider;
+	//private Collider2D _collider;
 	private SpriteRenderer _sprite;
 	private Color RedColor = new Color (1, 0, 0, 1);
 	public AudioClip[] playlist;
@@ -21,33 +21,36 @@ public class Monster : DestroyedObject
 
 	private void Start()
 	{
-		_collider = GetComponent<Collider2D>();
+		//_collider = GetComponent<Collider2D>();
 		_sprite = GetComponent<SpriteRenderer>();
 
-		Shooter.ShotFired += DetectHit;
+		//Shooter.ShotFired += DetectHit;
 
 		trackNumber = UnityEngine.Random.Range(0, 3);		
 		deathTrack = playlist[trackNumber];
 	}
 
-	void DetectHit(object sender, ShotArgs shot)
-	{
-		if (_collider.bounds.IntersectRay(shot.Ray))
-		{			
-			Hit(shot.Damage);
-			StartCoroutine("DamageTakenIndicator");
-		}
-	}
+
+
+	//void DetectHit(object sender, ShotArgs shot)
+	//{
+	//	if (_collider.bounds.IntersectRay(shot.Ray))
+	//	{			
+	//		Hit(shot.Damage);
+	//		StartCoroutine("DamageTakenIndicator");
+	//	}
+	//}
 
 	protected override void BeforeDestroy()
 	{
 		MonsterDied?.Invoke(this, deathTrack);
 	}
 
-	private void OnDestroy()
-	{
-		Shooter.ShotFired -= DetectHit;
-	}
+	public void TakeDamage(int damage)
+    {
+		Hit(damage);
+		StartCoroutine("DamageTakenIndicator");
+    }
 
 	IEnumerator DamageTakenIndicator()
     {

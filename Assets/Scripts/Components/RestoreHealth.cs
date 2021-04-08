@@ -1,32 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RestoreHealth : MonoBehaviour
 {
     [SerializeField]
-    private DestroyedObject gameobject;
-    [SerializeField]
-    private KeyCode KeyCodeOfRestoreHealth = KeyCode.E;
+    private DestroyedObject Gate;
+    //[SerializeField]
+    //private KeyCode KeyCodeOfRestoreHealth = KeyCode.E;
     [SerializeField]
     [Range(0, 100)]
     private int percentageOfRestorePerClick = 10;
 
-    private bool inTrigger;
+    private bool inTrigger = false;
 
-    private void RestoreObjectHealth()
+    public GameObject HealButton;    
+    AudioSource repairSound;    
+    bool restoring = false;
+
+
+    private void Start()
     {
+        repairSound = GetComponent<AudioSource>();
+    }
+
+    public void RestoreObjectHealth()
+    {
+        if (inTrigger && !restoring)
+        {
+            StartCoroutine("Restoring");
+        }                
+    }
+
+    IEnumerator Restoring()
+    {
+        repairSound.Play();
+        restoring = true;
+        HealButton.GetComponent<Button>().interactable = false;
+        yield return new WaitForSeconds(1.7f);
+        repairSound.Play();
+        yield return new WaitForSeconds(1.7f);
         int maxPercentage = 100;
-        gameobject.Health += gameobject.MaxHealth * percentageOfRestorePerClick / maxPercentage;
+        Gate.Health += Gate.MaxHealth * percentageOfRestorePerClick / maxPercentage;
+        restoring = false;
+        HealButton.GetComponent<Button>().interactable = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCodeOfRestoreHealth) && inTrigger)
+        if(Gate.Health > 900 || restoring)
         {
-            RestoreObjectHealth();
-            Debug.Log("Storage|Press E");
+            HealButton.GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            HealButton.GetComponent<Button>().interactable = true;
         }
     }
 
@@ -36,6 +66,8 @@ public class RestoreHealth : MonoBehaviour
         {
             inTrigger = true;
             Debug.Log("Enter");
+            HealButton.SetActive(true);
+            
         }
     }
 
@@ -45,6 +77,7 @@ public class RestoreHealth : MonoBehaviour
         {
             inTrigger = false;
             Debug.Log("Exit");
+            HealButton.SetActive(false);
         }
     }
 }

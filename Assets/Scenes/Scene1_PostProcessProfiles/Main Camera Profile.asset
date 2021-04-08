@@ -22,10 +22,10 @@ MonoBehaviour:
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.219
+    value: 0.475
   fastMode:
     overrideState: 1
-    value: 0
+    value: 1
 --- !u!114 &-6412396464657721441
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
   m_Name: Grain
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -128,7 +128,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.317
+    value: 0.465
   smoothness:
     overrideState: 1
     value: 0.2
@@ -175,13 +175,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b77c5407dc277943b591ade9e6b18c5, type: 3}
   m_Name: LensDistortion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
   intensity:
     overrideState: 1
-    value: 13
+    value: 0
   intensityX:
     overrideState: 1
     value: 1
@@ -196,4 +196,4 @@ MonoBehaviour:
     value: 0
   scale:
     overrideState: 1
-    value: 1.03
+    value: 0.92
